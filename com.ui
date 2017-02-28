@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>487</width>
-    <height>465</height>
+    <width>517</width>
+    <height>530</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -67,108 +67,7 @@
            <item row="0" column="1">
             <layout class="QGridLayout" name="gridLayout_2">
              <item row="0" column="0">
-              <widget class="QComboBox" name="portNameComboBox">
-               <item>
-                <property name="text">
-                 <string>COM1</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>COM2</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>COM3</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>COM4</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>COM5</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>COM6</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>COM7</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>COM8</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>COM9</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>COM10</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>COM11</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>COM12</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>COM13</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>COM14</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>COM15</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>COM16</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>COM17</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>COM18</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>COM19</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>COM20</string>
-                </property>
-               </item>
-              </widget>
+              <widget class="QComboBox" name="portNameComboBox"/>
              </item>
              <item row="1" column="0">
               <widget class="QComboBox" name="baudRateComboBox">
@@ -585,7 +484,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>487</width>
+     <width>517</width>
      <height>23</height>
     </rect>
    </property>

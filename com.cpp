@@ -7,6 +7,38 @@ com::com(QWidget *parent) :
 {
     ui->setupUi(this);
 
+#ifdef Q_OS_LINUX
+   ui->portNameComboBox->addItem( "ttyUSB0");
+   ui->portNameComboBox->addItem( "ttyUSB1");
+   ui->portNameComboBox->addItem( "ttyUSB2");
+   ui->portNameComboBox->addItem( "ttyUSB3");
+   ui->portNameComboBox->addItem( "ttyS0");
+   ui->portNameComboBox->addItem( "ttyS1");
+   ui->portNameComboBox->addItem( "ttyS2");
+   ui->portNameComboBox->addItem( "ttyS3");
+   ui->portNameComboBox->addItem( "ttyS4");
+   ui->portNameComboBox->addItem( "ttyS5");
+   ui->portNameComboBox->addItem( "ttyS6");
+#elif defined (Q_OS_WIN)
+   ui->portNameComboBox->addItem("COM0");
+   ui->portNameComboBox->addItem("COM1");
+   ui->portNameComboBox->addItem("COM2");
+   ui->portNameComboBox->addItem("COM3");
+   ui->portNameComboBox->addItem("COM4");
+   ui->portNameComboBox->addItem("COM5");
+   ui->portNameComboBox->addItem("COM6");
+   ui->portNameComboBox->addItem("COM7");
+   ui->portNameComboBox->addItem("COM8");
+   ui->portNameComboBox->addItem("COM9");
+   ui->portNameComboBox->addItem("COM10");
+   ui->portNameComboBox->addItem("COM11");
+   ui->portNameComboBox->addItem("COM12");
+   ui->portNameComboBox->addItem("COM13");
+   ui->portNameComboBox->addItem("COM14");
+   ui->portNameComboBox->addItem("COM15");
+
+#endif
+
     ui->closeBtn->setEnabled(false); //开始“关闭串口”按钮不可用
     ui->sendBtn->setEnabled(false);
     ui->changeBtn->setEnabled(false);
@@ -247,7 +279,11 @@ void com::on_openBtn_clicked()
 {
     QString portName = ui->portNameComboBox->currentText(); //获取串口名
 
+#ifdef Q_OS_LINUX
+    SailerCom = new QextSerialPort("/dev/" + portName);
+#elif defined (Q_OS_WIN)
     SailerCom = new QextSerialPort(portName);
+#endif
     //定义串口对象，并传递参数，在构造函数里对其进行初始化
 
     SailerCom ->open(QIODevice::ReadWrite); //打开串口
@@ -269,9 +305,9 @@ void com::on_openBtn_clicked()
 
     SailerCom->setBaudRate(BAUD4800);
 
-    else if(ui->baudRateComboBox->currentText()==tr("14400"))
+    //else if(ui->baudRateComboBox->currentText()==tr("14400"))
 
-    SailerCom->setBaudRate(BAUD14400);
+    //SailerCom->setBaudRate(BAUD9600);
 
     else if(ui->baudRateComboBox->currentText()==tr("19200"))
 
@@ -281,21 +317,21 @@ void com::on_openBtn_clicked()
 
     SailerCom->setBaudRate(BAUD38400);
 
-    else if(ui->baudRateComboBox->currentText()==tr("56000"))
+    //else if(ui->baudRateComboBox->currentText()==tr("56000"))
 
-    SailerCom->setBaudRate(BAUD56000);
+    //SailerCom->setBaudRate(BAUD56000);
 
     else if(ui->baudRateComboBox->currentText()==tr("57600"))
 
     SailerCom->setBaudRate(BAUD57600);
 
-    else if(ui->baudRateComboBox->currentText()==tr("128000"))
+    //else if(ui->baudRateComboBox->currentText()==tr("128000"))
 
-    SailerCom->setBaudRate(BAUD128000);
+    //SailerCom->setBaudRate(BAUD128000);
 
-    else if(ui->baudRateComboBox->currentText()==tr("256000"))
+    //else if(ui->baudRateComboBox->currentText()==tr("256000"))
 
-    SailerCom->setBaudRate(BAUD256000);
+    //SailerCom->setBaudRate(BAUD256000);
 
     //设置数据位
 
